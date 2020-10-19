@@ -1,0 +1,35 @@
+---
+title: "my-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## This is the draft vignette.!
+
+## Final vignette and .html doc should be rendered at a later development time
+
+```{r chunk_setup, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = TRUE,
+  eval = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+```{r setup}
+library(NOTDEFINEDYET)
+```
+
+
+## Linear Regression: The basics
+
+## Main Features
+
+## A simple example
+

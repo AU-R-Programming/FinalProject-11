@@ -36,6 +36,20 @@ Prof. Dr. Roberto Molinari
 
 ***
 
+## The `vignettes/` Directory:
+
+* For the package vignettes (!)
+* File `my-vignette.Rmd` is the draft vignette
+
+***
+
+## The `tests/` directory:
+
+* Tests using the testthat package
+* obs: re-do when the name of the package is defined!
+
+*** 
+
 Full assignment can be found in the `FinalProjectSTAT6210.html` file in the main directory.
 
 *** 
