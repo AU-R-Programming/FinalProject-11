@@ -1,0 +1,18 @@
+Package: NOTDEFINEDYET
+Type: Package
+Title: Calculate Linear Regression Model
+Version: 0.1
+Author: Ana Gabriela Itokazu, Eyoel Berhane, John Mustapha Musah
+Maintainer: ""
+Description: Performs Linear Regression and provides
+different statistics from the method.
+URL: https://github.com/AU-R-Programming/FinalProject-11/
+BugReports: https://github.com/AU-R-Programming/FinalProject-11/issues
+License: na
+Encoding: UTF-8
+RoxygenNote: (7.1.1) -- tba --
+LazyData: (true) -- tba --
+Depends: (R (>= 3.2.0)) -- tba --
+Imports: -- tba --
+Suggests: -- tba --
+VignetteBuilder: knitr
