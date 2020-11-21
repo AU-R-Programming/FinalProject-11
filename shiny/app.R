@@ -10,33 +10,36 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                 withMathJax(), # to be able to use LaTeX expressions within the text
                 
                 navbarPage(
-                     "FinalProject Group 11",
+                     "Final Project - Group 11",
+                     
                      tabPanel("The Assignment",
                               sidebarPanel(style="text-align: center;",
-                                           tags$h3(style="text-align: center;",
-                                                   "Project Information"),
+                                           tags$h2("Project Information"),
                                            tags$p(),
                                            tags$br(),
-                                           tags$h4("Objective"),
+                                           tags$h3("Objective"),
                                            tags$h5("To develop an R package implementing linear regression"),
                                            tags$p(),
                                            tags$br(),
-                                           tags$h4("Sources and Links"),
-                                           a(href="https://github.com/AU-R-Programming/FinalProject-11", "GitHub Repository"),
-                                           tags$br(),
-                                           a(href="https://github.com/AU-R-Programming/FinalProject-11/tree/main/shiny", "Shiny App Code"),
-                                           tags$br(),
-                                           a(href="", "RMarkdown Code"),
-                                           tags$p(),
-                                           tags$br(),
-                                           tags$h4("Group"),
+                                           tags$h3("Group"),
                                            tags$h5("Ana Gabriela Itokazu"),
                                            tags$h5("Eyoel Berhane"),
                                            tags$h5("John Musah"),
                                            tags$p(),
                                            tags$br(),
-                                           tags$h4("Class"),
-                                           tags$h5("STAT 6210 - R Programming for Data Science"),
+                                           tags$h3("Sources"),
+                                           a(href="https://github.com/AU-R-Programming/FinalProject-11", "Package"),
+                                           tags$br(),
+                                           a(href="https://github.com/AU-R-Programming/FinalProject-11/tree/main/shiny", "Shiny App"),
+                                           tags$br(),
+                                           a(href="https://github.com/AU-R-Programming/FinalProject-11", "RMarkdown"),
+                                           tags$br(),
+                                           a(href="https://github.com/AU-R-Programming/FinalProject-11", "GitHub Repository"),
+                                           tags$p(),
+                                           tags$br(),
+                                           tags$h3("Class"),
+                                           tags$h5("STAT 6210"),
+                                           tags$h5("R Programming for Data Science"),
                                            tags$h5("Prof. Dr. Roberto Molinari"),
                                            tags$h5("Auburn University - Fall 2020"),
                                            
@@ -48,7 +51,9 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                                         em("This package was built as part of the requirements for the 'R Programming for Data Science' course, by Prof. Dr. Roberto Molinari. The assignment was lined up as follows:"),
                                         br(),
                                         br(),
-                                        p("The final project will be evaluated on 100 points and the goal is to develop an R package implementing linear regression as highlighted in Section 6.4 of the book."),
+                                        p("The final project will be evaluated on 100 points and the goal is to develop an R package implementing linear regression as highlighted in",
+                                          a(href="https://smac-group.github.io/ds/section-functions.html#section-example-continued-least-squares-function", "Section 6.4 of the book"),
+                                          "."),
                                         p("The package must contain the basic functions to perform linear regression (", em("e.g."), "estimate the coefficient vector \\(\\beta\\)) and obtain different statistics from the procedure. Using the notation from the book and without using any of the linear regression functions already available in R (", em("i.e."), "all outputs must be produced using formulas provided in the book and in this document), the basic outputs from the procedure must be the following:"),
                                         tags$ul(
                                              tags$li("Confidence intervals: the user must be able to choose the significance level \\(\\alpha\\) to obtain for the \\(1−\\alpha\\) confidence intervals for \\(\\beta\\) and whether to use the asymptotic or bootstrap approach for this."),
@@ -61,11 +66,13 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                                              ),
                                              tags$li("Mean Square Prediction Error (MSPE) computed in matrix form."),
                                              tags$li("F-test: compute the statistic in matrix form and output the corresponding p-value."),
-                                             tags$li("Help documentation for all functions (for example using the roxygen2 package)"),
+                                             tags$li("Help documentation for all functions (for example using the", em("roxygen2"), "package)"),
                                         ),
                                         p("The package will be made available for download on a GitHub repository in the AU-R-Programming organization and the submission will be an html file on Canvas. The html file wil be a so-called vignette which indicates the name of the GitHub repository (and package) where you explain and give examples of how to use the package functions for all the desired outputs using one of the datasets on the Canvas course page."),
                                         hr(),
-                                        em("The package will be made available for download on a GitHub repository in the AU-R-Programming organization and the submission will be an html file on Canvas The html file wil be a so-called vignette which indicates the name of the GitHub repository (and package) where you explain and give examples of how to use the package functions for all the desired outputs using one of the datasets on the Canvas course page."),
+                                        em("The package will be made available for download on a GitHub repository in the",
+                                        a(href="https://github.com/AU-R-Programming", "AU-R-Programming organization"),
+                                        "and the submission will be an html file on Canvas. The html file wil be a so-called vignette which indicates the name of the GitHub repository (and package) where you explain and give examples of how to use the package functions for all the desired outputs using one of the datasets on the Canvas course page."),
                                         hr(),
                                         br(),
                                         
@@ -95,32 +102,28 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                               
                      ), # tabPanel, The Theory
  
-                    tabPanel("Some Examples",
+                    tabPanel("How to use it",
                              "Page under construction...."
                               
-                    ), # tabPanel, Examples
+                    ) # tabPanel, Examples
  
-                    tabPanel("Try It Yourself!",
-                             mainPanel(style="text-align: justify;",
-                                       p("You want to try it yourself to see if we really did something? Sure! Just follow the link below to our page:"),
-                                       a(href="www.rstudio.com", "Click here!"),
+#                    tabPanel("Try It Yourself!",
+#                             mainPanel(style="text-align: justify;",
+#                                       p("You want to try it yourself to see if we really did something? Sure! Just follow the link below to our page:"),
+#                                       a(href="www.rstudio.com", "Click here!"),
                                        
                                        
-                             ) # mainPanel
+#                             ) # tabPanel, Try It Yourself
                             
-                    ) # tabPanel, Try It Yourself
-                     
                 ) # navbarPage
-) #fluidPage 
+
+        ) #fluidPage 
 
 
 # Define server function
 
 server <- function(input, output) {
-     
-     output$txtout <- renderText({
-          paste(input$txt1, input$txt2, sep = " " )
-     })
+        
 } # server
 
 
