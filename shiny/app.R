@@ -12,24 +12,33 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                 navbarPage(
                      "FinalProject Group 11",
                      tabPanel("The Assignment",
-                              sidebarPanel(style="text-align: justify;",
-                                           tags$h3("Project Information"),
+                              sidebarPanel(style="text-align: center;",
+                                           tags$h3(style="text-align: center;",
+                                                   "Project Information"),
                                            tags$p(),
                                            tags$br(),
                                            tags$h4("Objective"),
                                            tags$h5("To develop an R package implementing linear regression"),
                                            tags$p(),
                                            tags$br(),
-                                           tags$h4("Class"),
-                                           tags$h5("STAT 6210 - R Programming for Data Science"),
-                                           tags$h5("Prof. Dr. Roberto Molinari"),
-                                           tags$h5("Auburn University - Fall 2020"),
+                                           tags$h4("Sources and Links"),
+                                           a(href="https://github.com/AU-R-Programming/FinalProject-11", "GitHub Repository"),
+                                           tags$br(),
+                                           a(href="https://github.com/AU-R-Programming/FinalProject-11/tree/main/shiny", "Shiny App Code"),
+                                           tags$br(),
+                                           a(href="", "RMarkdown Code"),
                                            tags$p(),
                                            tags$br(),
                                            tags$h4("Group"),
                                            tags$h5("Ana Gabriela Itokazu"),
                                            tags$h5("Eyoel Berhane"),
                                            tags$h5("John Musah"),
+                                           tags$p(),
+                                           tags$br(),
+                                           tags$h4("Class"),
+                                           tags$h5("STAT 6210 - R Programming for Data Science"),
+                                           tags$h5("Prof. Dr. Roberto Molinari"),
+                                           tags$h5("Auburn University - Fall 2020"),
                                            
                               ), # sidebarPanel
                               
@@ -40,18 +49,18 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                                         br(),
                                         br(),
                                         p("The final project will be evaluated on 100 points and the goal is to develop an R package implementing linear regression as highlighted in Section 6.4 of the book."),
-                                        p("The package must contain the basic functions to perform linear regression (e.g. estimate the coefficient vector \\(\\beta\\)) and obtain different statistics from the procedure. Using the notation from the book and without using any of the linear regression functions already available in R (i.e. all outputs must be produced using formulas provided in the book and in this document), the basic outputs from the procedure must be the following:"),
+                                        p("The package must contain the basic functions to perform linear regression (", em("e.g."), "estimate the coefficient vector \\(\\beta\\)) and obtain different statistics from the procedure. Using the notation from the book and without using any of the linear regression functions already available in R (", em("i.e."), "all outputs must be produced using formulas provided in the book and in this document), the basic outputs from the procedure must be the following:"),
                                         tags$ul(
                                              tags$li("Confidence intervals: the user must be able to choose the significance level \\(\\alpha\\) to obtain for the \\(1−\\alpha\\) confidence intervals for \\(\\beta\\) and whether to use the asymptotic or bootstrap approach for this."),
-                                             tags$li("Plots (with e.g. ggplot2) including:",
+                                             tags$li("Plots (with ", em("e.g."), "ggplot2) including:",
                                                      tags$ol(
-                                                          tags$li("Residuals vs fitted-value (fitted values are \\(\\hat{y}= X \\cdot \\hat{\\beta}\\))."),
+                                                          tags$li("Residuals vs fitted-value."),
                                                           tags$li("qq-plot of residuals."),
                                                           tags$li("Histogram (or density) of residuals."),
                                                      ),
                                              ),
-                                             tags$li("Mean Square Prediction Error (MSPE) computed in matrix form: $$MSPE:=1n∑i=1n(y−y)^2$$, where \\(n\\) is the number of observations in the data (i.e. number of rows)."),
-                                             tags$li("F-test: compute the statistic in matrix form and output the corresponding p-value. With y¯ representing the sample mean of y, let SSM:=∑i=1n(y^i−y¯), SSE:=∑i=1n(yi−y^i), and DFM=p−1 and DFE=n−p. Then we can define MSM=SSM/DFM and MSE=SSE/DFE and obtain the F-statistic as follows: F^∗=MSMMSE.Using the appropriate distribution in R, compute P(F>F∗) which corresponds to the p-value."),
+                                             tags$li("Mean Square Prediction Error (MSPE) computed in matrix form."),
+                                             tags$li("F-test: compute the statistic in matrix form and output the corresponding p-value."),
                                              tags$li("Help documentation for all functions (for example using the roxygen2 package)"),
                                         ),
                                         p("The package will be made available for download on a GitHub repository in the AU-R-Programming organization and the submission will be an html file on Canvas. The html file wil be a so-called vignette which indicates the name of the GitHub repository (and package) where you explain and give examples of how to use the package functions for all the desired outputs using one of the datasets on the Canvas course page."),
@@ -92,7 +101,12 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                     ), # tabPanel, Examples
  
                     tabPanel("Try It Yourself!",
-                             "Page under construction...."
+                             mainPanel(style="text-align: justify;",
+                                       p("You want to try it yourself to see if we really did something? Sure! Just follow the link below to our page:"),
+                                       a(href="www.rstudio.com", "Click here!"),
+                                       
+                                       
+                             ) # mainPanel
                             
                     ) # tabPanel, Try It Yourself
                      
