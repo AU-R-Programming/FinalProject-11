@@ -68,9 +68,9 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                                              tags$li("F-test: compute the statistic in matrix form and output the corresponding p-value."),
                                              tags$li("Help documentation for all functions (for example using the", em("roxygen2"), "package)"),
                                         ),
-                                        p("The package will be made available for download on a GitHub repository in the AU-R-Programming organization and the submission will be an html file on Canvas. The html file wil be a so-called vignette which indicates the name of the GitHub repository (and package) where you explain and give examples of how to use the package functions for all the desired outputs using one of the datasets on the Canvas course page."),
+                                        br(),
                                         hr(),
-                                        em("The package will be made available for download on a GitHub repository in the",
+                                        p("The package will be made available for download on a GitHub repository in the",
                                         a(href="https://github.com/AU-R-Programming", "AU-R-Programming organization"),
                                         "and the submission will be an html file on Canvas. The html file wil be a so-called vignette which indicates the name of the GitHub repository (and package) where you explain and give examples of how to use the package functions for all the desired outputs using one of the datasets on the Canvas course page."),
                                         hr(),
@@ -82,19 +82,19 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                      
                      tabPanel("The Package",
                               "Page under construction...."
- #                             sidebarPanel(
- #                                  tags$h3("Input:"),
- #                                  textInput("txt1", "First Name:", ""),
- #                                  textInput("txt2", "Last Name:", ""),
- #                                  
- #                             ), # sidebarPanel
- #                             mainPanel(
- #                                  h1("Header 1"),
- #                                  
- #                                  h4("Output"),
- #                                  verbatimTextOutput("txtout"),
- #                             ) # mainPanel
- #                             
+                             # sidebarPanel(
+                             #      tags$h3("Input:"),
+                             #      textInput("txt1", "First Name:", ""),
+                             #      textInput("txt2", "Last Name:", ""),
+                             # 
+                             # ), # sidebarPanel
+                             # mainPanel(
+                             #      h1("Header 1"),
+                             # 
+                             #      h4("Output"),
+                             #      verbatimTextOutput("txtout"),
+                             # ) # mainPanel
+
                      ), # tabPanel, The Package
  
                     tabPanel("The Theory Behind It",

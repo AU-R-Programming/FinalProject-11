@@ -1,0 +1,12 @@
+name: shiny_g11_lm
+title: shiny_g11_lm
+username:
+account: gabiitokazu
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3313450
+bundleId: 3914426
+url: https://gabiitokazu.shinyapps.io/shiny_g11_lm/
+when: 1606523132.65137
+asMultiple: FALSE
+asStatic: FALSE
