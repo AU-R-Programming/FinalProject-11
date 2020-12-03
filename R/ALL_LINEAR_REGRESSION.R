@@ -121,11 +121,29 @@ F_Calc=function(y, X, FitValues) {
 F_Data=F_Calc(y, X, FittedVal)
 
 #AllData=rbind(CIMod, MSPE_Val, F_Data)
-par(mfrow=c(3,1))
-plot(MainLinRegr, which=c(1,2))
-hist(ResidVal, main = paste("Histogram of Residuals for Regression Model"), xlab = "Residual Values", ylab="Frequency")
+par(mfrow=c(1,3),oma = c(1,0,1,0))
+HistResVFit=hist(ResidVal, xlab = "Residual Values", ylab="Frequency")
+title(line = -2)
+#plot(HistResVFit)
+plot(MainLinRegr,c(2,1))
 
-return(list(beta = OptimBeta, sigma2 = VarHat, 
+
+
+return(list(beta = OptimBeta, MSPE = MSPE_Val, 
             variance_beta = VarBetaHat, ci = CIMod, F.Stat=F_Data))
 
 }
+
+#Example Value to validate results closely match
+Reg_Lin=lm(y~X-1)
+Our_Lin_Regr=Linear_Regr_Plot(beta, y, X, alpha=0.05)
+
+# Compare outputs
+manual_results = c(Our_Lin_Regr$beta, Our_Lin_Regr$variance_beta)
+base_results = c(Reg_Lin$coefficients, 
+                 (1/Reg_Lin$df.residual)*t(Reg_Lin$residuals)%*%Reg_Lin$residuals)
+results = cbind(manual_results, base_results)
+row.names(results) = c("Beta", "Sigma")
+results
+
+
