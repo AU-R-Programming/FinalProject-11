@@ -52,8 +52,8 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                                         br(),
                                         br(),
                                         p("The final project will be evaluated on 100 points and the goal is to develop an R package implementing linear regression as highlighted in",
-                                          a(href="https://smac-group.github.io/ds/section-functions.html#section-example-continued-least-squares-function", "Section 6.4 of the book"),
-                                          "."),
+                                        a(href="https://smac-group.github.io/ds/section-functions.html#section-example-continued-least-squares-function", "Section 6.4 of the book"),
+                                        "."),
                                         p("The package must contain the basic functions to perform linear regression (", em("e.g."), "estimate the coefficient vector \\(\\beta\\)) and obtain different statistics from the procedure. Using the notation from the book and without using any of the linear regression functions already available in R (", em("i.e."), "all outputs must be produced using formulas provided in the book and in this document), the basic outputs from the procedure must be the following:"),
                                         tags$ul(
                                              tags$li("Confidence intervals: the user must be able to choose the significance level \\(\\alpha\\) to obtain for the \\(1−\\alpha\\) confidence intervals for \\(\\beta\\) and whether to use the asymptotic or bootstrap approach for this."),
@@ -76,9 +76,9 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                                         hr(),
                                         br(),
                                         
-                              ) # mainPanel
+                                        ) # mainPanel
                               
-                     ), # tabPanel, The Assignment
+                              ), # tabPanel, The Assignment
                      
                      tabPanel("The Package",
                               "Page under construction...."
@@ -98,7 +98,12 @@ ui <- fluidPage(theme = shinytheme("flatly"),
                      ), # tabPanel, The Package
  
                     tabPanel("The Theory Behind It",
-                             "Page under construction...."
+                             mainPanel(style="text-align: center;",
+                                       
+                                       
+                                       
+                                       
+                                       ) #mainPanel, The Theory
                               
                      ), # tabPanel, The Theory
  
