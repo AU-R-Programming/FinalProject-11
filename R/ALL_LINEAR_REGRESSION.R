@@ -19,7 +19,7 @@ library(leaflet)
 
 
 n=1000
-p=2
+p=4
 X=matrix(NA, nrow=n,ncol=p)
 for (i in 1:p) {
   set.seed(i+200)
@@ -133,17 +133,5 @@ return(list(beta = OptimBeta, MSPE = MSPE_Val,
             variance_beta = VarBetaHat, ci = CIMod, F.Stat=F_Data))
 
 }
-
-#Example Value to validate results closely match
-Reg_Lin=lm(y~X-1)
-Our_Lin_Regr=Linear_Regr_Plot(beta, y, X, alpha=0.05)
-
-# Compare outputs
-manual_results = c(Our_Lin_Regr$beta, Our_Lin_Regr$variance_beta)
-base_results = c(Reg_Lin$coefficients, 
-                 (1/Reg_Lin$df.residual)*t(Reg_Lin$residuals)%*%Reg_Lin$residuals)
-results = cbind(manual_results, base_results)
-row.names(results) = c("Beta", "Sigma")
-results
 
 
