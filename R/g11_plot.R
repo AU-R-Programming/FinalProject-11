@@ -1,4 +1,27 @@
-
+#' @title Plot function for g11 lm package
+#'
+#' @description Function that 
+#' @param response A \code{vector} with the values for the dependent variable (also called outcome).
+#' @param covariates A \code{matrix} with the values for the independent variable (also called predictors, or explanatory variable).
+#' @param Beta A \code{matrix} that can be calculated using \code{g11_lm} function.!
+#' @param alpha A \code{numeric} (double) that sets the alpha coefficient to be used. Has to be between 0 and 1.
+#' @param method A \code{string} that defines the method used. Options are "Asymptotic" and "Bootstrap", accepts minor misspellings with a warning - which can be both good and bad.
+#' @return A \code{list} containing the following attributes:
+#' \describe{
+#'      \item{beta}{Estimated coefficients, Linear Regression Model.}
+#'      \item{sigma2}{explanation}
+#'      \item{variance_beta}{explanation}
+#'      \item{ci}{explanation}
+#' }
+#' @author Group11
+#' @importFrom 
+#' @export
+#' @examples
+#' Using data(hubble) from libary(gamair)
+#' g11_lm(hubble$y, hubble$x, alpha = 0.01, method = "Bootstrap")
+#' g11_lm(hubble$y, hubble$x, method = "Asymptotic")
+#' 
+#' From here, is the ACTUAL function:
 
 
 

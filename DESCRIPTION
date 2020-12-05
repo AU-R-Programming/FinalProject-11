@@ -1,4 +1,4 @@
-Package: NOTDEFINEDYET
+Package: g11
 Type: Package
 Title: Calculate Linear Regression Model
 Version: 0.1.0
@@ -8,7 +8,7 @@ Author: c(
      person("John", "Musah", email = "@auburn.edu", role= "aut", "cre")
      )
 Maintainer: Ana Gabriela <gabi@auburn.edu>
-Description: Performs Linear Regression and provides different statistics from the method.
+Description: Performs Linear Regression and provides statistics from the method.
 URL: https://github.com/AU-R-Programming/FinalProject-11/
 BugReports: https://github.com/AU-R-Programming/FinalProject-11/issues
 License: GPL-3

@@ -1,4 +1,4 @@
 library(testthat)
-library(NOTDEFINEDYET)
+library(g11)
 
-test_check("NOTDEFINEDYET")
+test_check("g11")
