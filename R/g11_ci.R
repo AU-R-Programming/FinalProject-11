@@ -97,8 +97,8 @@ g11_ci <- function (response, covariates, alpha = 0.05, method = "Asymptotic") {
      
      if(method == "Asymptotic") {
           
-          ci_beta <- c(beta - qnorm(p = quad)*sqrt(var_beta),
-                       beta + qnorm(p = quad)*sqrt(var_beta))
+          ci_beta <- c(beta - qnorm(p = quad)*sqrt(abs(var_beta)),
+                       beta + qnorm(p = quad)*sqrt(abs(var_beta))
           
      } else {
           
